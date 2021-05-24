@@ -1,1 +1,1 @@
-gunicorn test_django.wsgi --log-file -
+web: gunicorn test_django.wsgi --log-file -
