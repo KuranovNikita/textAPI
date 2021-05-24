@@ -85,10 +85,14 @@ DATABASES = {
         'NAME': 'myblogdb',
         'USER': 'postgres',
         'PASSWORD': 'nik1234',
-        'HOST': 'localhost',
+        'HOST': os.environ.get('DB_HOST'),
         'PORT': '5432',
     }
 }
+
+import dj_database_url
+db = dj_database_url.config()
+DATABASES['default'].update(db)
 
 
 # Password validation
